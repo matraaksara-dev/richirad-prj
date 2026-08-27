@@ -10,3 +10,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# DB wal/shm + log (operasional, jangan commit)
+richirad_vip.db-*
+bot/*.log
