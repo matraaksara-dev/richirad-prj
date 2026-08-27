@@ -1,0 +1,64 @@
+---
+// Richirad. — VIP Hero (PRD Amendment v2.1, Bagian 4.4 Section 1)
+// CTA "Daftar VIP Insider" → Telegram (registrasi via grup)
+import { Icon } from 'astro-icon/components';
+import { SITE } from '../../lib/site';
+
+const trustItems = ['Edukasi', 'Transparansi', 'Manajemen Risiko'];
+---
+
+<section class="section-pad overflow-hidden bg-bg">
+  <div class="container-page max-w-4xl text-center">
+    <p class="eyebrow mx-auto">
+      <Icon name="lucide:graduation-cap" class="h-4 w-4 text-primary" />
+      VIP Education
+    </p>
+
+    <h1 class="h1 mt-5">
+      Belajar trading lebih intensif.<br />
+      <span class="text-primary">Dengan dukungan praktik</span> dan komunitas.
+    </h1>
+
+    <p class="lead mx-auto mt-6 max-w-2xl text-muted">
+      Program VIP Education Richirad. dirancang untuk mahasiswa, pekerja, freelancer, dan
+      profesional yang ingin naik level dengan struktur jelas dan dampingan komunitas.
+    </p>
+
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href={SITE.telegram}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-gold"
+      >
+        <Icon name="lucide:send" class="h-4 w-4" />
+        Daftar VIP Insider
+      </a>
+      <a href="#skema" class="btn-secondary">
+        Pelajari Skema
+        <Icon name="lucide:arrow-down" class="h-4 w-4" />
+      </a>
+    </div>
+
+    <!-- Trust line -->
+    <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+      {
+        trustItems.map((item, i) => (
+          <>
+            {i > 0 && <li class="hidden h-4 w-px bg-border sm:block" aria-hidden="true" />}
+            <li class="flex items-center gap-2 text-sm font-medium text-muted">
+              <Icon name="lucide:check-circle-2" class="h-4 w-4 text-primary" />
+              {item}
+            </li>
+          </>
+        ))
+      }
+    </ul>
+
+    <!-- Micro disclaimer (compliance) -->
+    <p class="caption mx-auto mt-6 max-w-xl">
+      Program edukasi &amp; praktik. Bukan investasi berimbal hasil tetap — trading selalu
+      mengandung risiko.
+    </p>
+  </div>
+</section>

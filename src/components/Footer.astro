@@ -1,0 +1,116 @@
+---
+// Richirad. — Footer (PRD 3.13 + Amendment v2.1)
+// Background #0F0F0F, text light gray, disclaimer legal wajib
+import { Icon } from 'astro-icon/components';
+import { SITE } from '../lib/site';
+
+const nav = [
+  { label: 'Beranda', href: '#beranda' },
+  { label: 'Tentang', href: '#tentang' },
+  { label: 'Program', href: '#program' },
+  { label: 'Komunitas', href: '#komunitas' },
+  { label: 'VIP', href: '/vip' },
+  { label: 'FAQ', href: '#faq' },
+];
+---
+
+<footer class="border-t border-white/10 bg-night">
+  <div class="container-page py-12 md:py-16">
+    <div class="grid gap-10 md:grid-cols-3">
+      <!-- Logo + tagline -->
+      <div>
+        <a href="#beranda" class="text-xl font-extrabold tracking-tight text-white">
+          Richirad<span class="text-primary">.</span>
+        </a>
+        <p class="body-secondary mt-3 max-w-xs">
+          Komunitas edukasi trading futures &amp; spot di Kota Malang. Fokus pada ilmu,
+          disiplin, dan kebersamaan.
+        </p>
+        <p class="caption mt-4">
+          © 2026 Richirad. • Malang, Indonesia
+        </p>
+      </div>
+
+      <!-- Navigasi -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wider text-white/60">Navigasi</p>
+        <ul class="mt-4 space-y-2.5">
+          {
+            nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class={
+                    item.label === 'VIP'
+                      ? 'text-[15px] font-semibold text-gold-bright transition-colors'
+                      : 'text-[15px] text-white/60 transition-colors hover:text-white'
+                  }
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Kontak / Sosial -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wider text-white/60">Kontak</p>
+        <ul class="mt-4 space-y-2.5">
+          <li>
+            <a
+              href={SITE.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-[15px] text-white/60 transition-colors hover:text-white"
+            >
+              <Icon name="lucide:send" class="h-4 w-4" />
+              Gabung Grup Richirad
+            </a>
+          </li>
+          <li>
+            <a
+              href={SITE.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-[15px] text-white/60 transition-colors hover:text-white"
+            >
+              <Icon name="lucide:instagram" class="h-4 w-4" />
+              @richirad
+            </a>
+          </li>
+          <li>
+            <a
+              href={SITE.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-[15px] text-white/60 transition-colors hover:text-white"
+            >
+              <Icon name="lucide:message-circle" class="h-4 w-4" />
+              Hubungi via WhatsApp
+            </a>
+          </li>
+          <li>
+            <span class="flex items-center gap-2 text-[15px] text-white/60">
+              <Icon name="lucide:map-pin" class="h-4 w-4" />
+              Malang, Indonesia
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Disclaimer legal (wajib) -->
+    <div class="mt-10 border-t border-white/10 pt-8">
+      <p class="caption text-white/40 leading-[1.6]">
+        <strong class="font-semibold text-white/50">Disclaimer:</strong> Richirad. adalah
+        komunitas edukasi trading. Kami tidak memberikan nasihat investasi, signal, atau
+        rekomendasi pembelian/penjualan aset. Trading futures dan spot mengandung risiko
+        tinggi termasuk kehilangan modal. Seluruh keputusan trading adalah tanggung jawab
+        pribadi masing-masing individu. Pastikan Anda memahami risiko sebelum melakukan
+        transaksi.
+      </p>
+    </div>
+  </div>
+</footer>

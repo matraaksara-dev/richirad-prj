@@ -1,0 +1,53 @@
+---
+// Richirad. — Founder Profile (PRD Amendment v2.1, Bagian 2)
+// Minimalis: 2 kartu, avatar inisial, tanpa foto real
+import SectionHeading from './SectionHeading.astro';
+
+const founders = [
+  {
+    name: 'Richi',
+    role: 'Founder Trader Abal-Abal Community & Richirad',
+    initial: 'R',
+    desc: 'Trader dengan pengalaman lebih dari 6 tahun di pasar futures & spot, serta lebih dari 10 tahun di industri jasa keuangan. Spesialisasi utama pada market XAU dan BTC, dengan fokus pada disiplin, manajemen risiko, dan proses trading yang terukur.',
+  },
+  {
+    name: 'Rad',
+    role: 'Founder Richirad.',
+    initial: 'R',
+    desc: 'Berpengalaman lebih dari 8 tahun di pengembangan bisnis lembaga keuangan, market research, dan analisis fundamental. Aktif di pasar saham dan crypto dengan pendekatan berbasis data dan riset.',
+  },
+];
+---
+
+<section id="founders" class="section-pad scroll-mt-24 bg-surface">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Founder"
+      title="Di balik Richirad."
+      sub="Dua orang dengan latar belakang keuangan dan riset, menyatukan pengalaman untuk ruang belajar yang sehat."
+      align="center"
+    />
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {
+        founders.map((founder) => (
+          <article class="card flex gap-5 p-7">
+            <span
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-light text-xl font-bold text-primary"
+              aria-hidden="true"
+            >
+              {founder.initial}
+            </span>
+            <div>
+              <p class="text-lg font-semibold text-ink">{founder.name}</p>
+              <p class="text-[13px] font-medium uppercase tracking-wide text-primary">
+                {founder.role}
+              </p>
+              <p class="body-secondary mt-3">{founder.desc}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

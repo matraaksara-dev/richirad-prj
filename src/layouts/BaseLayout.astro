@@ -1,0 +1,76 @@
+---
+// Richirad. — BaseLayout
+// SEO meta mengikuti PRD Bagian 4.3
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Richirad. — Komunitas Edukasi Trading Futures & Spot di Malang',
+  description =
+    'Belajar trading futures dan spot dengan cara profesional dan aman bersama komunitas di Kota Malang. Fokus edukasi, disiplin, dan kebersamaan.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f0f0f" />
+
+    <!-- Anti-flash: terapkan tema sebelum halaman dirender (default: gelap) -->
+    <script is:inline>
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('richirad-theme');
+        } catch (e) {
+          stored = null;
+        }
+        var light = stored === 'light';
+        document.documentElement.classList.toggle('light', light);
+        document.documentElement.classList.toggle('dark', !light);
+        document.documentElement.setAttribute('data-theme', light ? 'light' : 'dark');
+      })();
+    </script>
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Canonical + Open Graph -->
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL('/og-image.svg', Astro.site).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Richirad." />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Font Inter: display=swap (4.2) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

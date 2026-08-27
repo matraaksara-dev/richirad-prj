@@ -1,0 +1,22 @@
+---
+// Richirad. — SectionHeading (reusable)
+interface Props {
+  eyebrow?: string;
+  title: string;
+  sub?: string;
+  align?: 'left' | 'center';
+}
+
+const { eyebrow, title, sub, align = 'left' } = Astro.props;
+const alignClass = align === 'center' ? 'mx-auto text-center' : '';
+---
+
+<div class={`max-w-3xl ${alignClass}`}>
+  {eyebrow && (
+    <p class="mb-3 flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-primary">
+      {eyebrow}
+    </p>
+  )}
+  <h2 class="h2">{title}</h2>
+  {sub && <p class="lead mt-4 text-muted">{sub}</p>}
+</div>

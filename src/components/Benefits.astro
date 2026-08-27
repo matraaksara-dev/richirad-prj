@@ -1,0 +1,62 @@
+---
+// Richirad. — Apa yang Kamu Dapatkan / Benefits (PRD 3.6)
+import { Icon } from 'astro-icon/components';
+import SectionHeading from './SectionHeading.astro';
+
+const benefits = [
+  {
+    icon: 'lucide:book-open',
+    title: 'Edukasi Terstruktur',
+    desc: 'Materi futures & spot dari dasar hingga penerapan, disusun bertahap dan praktis.',
+  },
+  {
+    icon: 'lucide:message-circle',
+    title: 'Diskusi & Analisis Bersama',
+    desc: 'Ruang untuk bertanya, berbagi pandangan market, dan belajar dari pengalaman nyata.',
+  },
+  {
+    icon: 'lucide:users',
+    title: 'Mentoring & Accountability',
+    desc: 'Teman seperjuangan yang mengingatkan disiplin dan manajemen risiko.',
+  },
+  {
+    icon: 'lucide:calendar',
+    title: 'Meetup Offline Malang',
+    desc: 'Bertemu langsung, berdiskusi lebih dalam, dan membangun relasi nyata.',
+  },
+  {
+    icon: 'lucide:shield-check',
+    title: 'Budaya Risiko yang Sehat',
+    desc: 'Kami menekankan position sizing, risk-reward, dan psychology trading.',
+  },
+  {
+    icon: 'lucide:target',
+    title: 'Progress yang Terukur',
+    desc: 'Belajar dengan kerangka yang jelas, bukan sekadar “ikut-ikutan”.',
+  },
+];
+---
+
+<section id="program" class="section-pad scroll-mt-24 bg-bg">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Manfaat"
+      title="Apa yang kamu dapatkan di Richirad."
+      sub="Bukan sekadar grup chat. Ada struktur, ada proses, ada teman yang mendampingi."
+    />
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        benefits.map((benefit) => (
+          <article class="card p-7 transition-shadow hover:shadow-[var(--shadow-card-hover)]">
+            <span class="flex h-11 w-11 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+              <Icon name={benefit.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="h3 mt-5">{benefit.title}</h3>
+            <p class="body-secondary mt-2">{benefit.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

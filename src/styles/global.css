@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   Richirad. — Design System + Theme (Dark = Default)
+   ============================================================ */
+
+@theme {
+  /* Static tokens (tidak berubah antar tema) */
+  --color-primary: #4a90e2;
+  --color-primary-dark: #2e6bb0;
+  --color-night: #0f0f0f;         /* untuk section selalu gelap (CTA, Footer) */
+  --color-white: #ffffff;
+  --color-gold-bright: #e6b320;   /* emas untuk teks di atas background selalu gelap */
+
+  --font-sans:
+    "Inter", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius-card: 8px;
+  --radius-btn: 6px;
+  --shadow-card: 0 1px 3px rgb(0 0 0 / 0.06);
+  --shadow-card-hover: 0 8px 24px rgb(0 0 0 / 0.08);
+}
+
+@theme inline {
+  /* Themed tokens — nilainya di-set oleh :root (dark) / .light */
+  --color-primary-light: var(--c-primary-light);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-muted: var(--c-muted);
+  --color-surface: var(--c-surface);
+  --color-border: var(--c-border);
+  --color-bg: var(--c-bg);
+  --color-card: var(--c-card);
+  --color-gold: var(--c-gold);          /* emas tema-aware (nav header) */
+  --color-gold-hover: var(--c-gold-hover);
+  --color-gold-text: var(--c-gold-text);
+}
+
+/* ── DEFAULT: Dark Theme ── */
+:root {
+  --c-bg: #0f0f0f;
+  --c-card: #1a1a1a;
+  --c-surface: #141414;
+  --c-border: #2b2b2b;
+  --c-ink: #f9fafb;
+  --c-ink-soft: #e5e7eb;
+  --c-muted: #9ca3af;
+  --c-primary-light: #1b3a5c;
+  --c-gold: #e6b320;
+  --c-gold-hover: #c79a1c;
+  --c-gold-text: #0f0f0f;
+  color-scheme: dark;
+}
+
+/* ── Light Theme ── */
+.light {
+  --c-bg: #ffffff;
+  --c-card: #ffffff;
+  --c-surface: #f3f4f6;
+  --c-border: #e5e7eb;
+  --c-ink: #0f0f0f;
+  --c-ink-soft: #1a1a1a;
+  --c-muted: #6b7280;
+  --c-primary-light: #e8f4fc;
+  --c-gold: #8b6914;
+  --c-gold-hover: #6f560f;
+  --c-gold-text: #ffffff;
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg font-sans text-ink-soft antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+  }
+
+  .section-pad {
+    @apply py-12 md:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-[13px] font-medium tracking-wide text-muted;
+  }
+
+  .h1 {
+    @apply text-4xl font-bold leading-[1.2] text-ink sm:text-5xl lg:text-[56px];
+  }
+  .h2 {
+    @apply text-2xl font-semibold leading-[1.3] text-ink sm:text-3xl lg:text-4xl;
+  }
+  .h3 {
+    @apply text-lg font-semibold leading-[1.4] text-ink sm:text-[22px];
+  }
+  .lead {
+    @apply text-base leading-[1.6] text-ink-soft sm:text-lg;
+  }
+  .body-secondary {
+    @apply text-sm leading-[1.5] text-muted sm:text-[15px];
+  }
+  .caption {
+    @apply text-[13px] leading-[1.4] text-muted;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[6px] px-7 py-3 text-[15px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-secondary {
+    @apply border border-primary text-primary hover:bg-primary-light;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-[6px] px-7 py-3 text-[15px] font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+    background-color: var(--c-gold);
+    color: var(--c-gold-text);
+  }
+  .btn-gold:hover {
+    background-color: var(--c-gold-hover);
+  }
+
+  .card {
+    @apply rounded-[8px] border border-border bg-card shadow-[var(--shadow-card)];
+  }
+}
+
+details[open] .faq-icon-plus {
+  display: none;
+}
+details:not([open]) .faq-icon-minus {
+  display: none;
+}

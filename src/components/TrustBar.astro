@@ -1,0 +1,26 @@
+---
+// Richirad. — Trust Bar / Social Proof Strip (PRD 3.3)
+import { Icon } from 'astro-icon/components';
+
+const items = [
+  { icon: 'lucide:users', label: 'Komunitas Trader Malang' },
+  { icon: 'lucide:book-open', label: 'Fokus Edukasi Terstruktur' },
+  { icon: 'lucide:shield-check', label: 'Manajemen Risiko Prioritas' },
+  { icon: 'lucide:map-pin', label: 'Meetup Offline di Malang' },
+];
+---
+
+<section class="border-y border-border bg-surface" aria-label="Keunggulan Richirad.">
+  <div class="container-page grid grid-cols-2 gap-x-6 gap-y-6 py-8 lg:grid-cols-4">
+    {
+      items.map((item) => (
+        <div class="flex items-center gap-3">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-[8px] bg-card text-primary shadow-[var(--shadow-card)]">
+            <Icon name={item.icon} class="h-5 w-5" />
+          </span>
+          <p class="text-sm font-medium text-ink-soft">{item.label}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

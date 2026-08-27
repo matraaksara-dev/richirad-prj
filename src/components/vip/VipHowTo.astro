@@ -1,0 +1,53 @@
+---
+// Richirad. — VIP: Cara Daftar (PRD Amendment v2.1, Bagian 4.4 Section 6)
+// Registrasi → Telegram (sesuai arahan: CTA langsung ke grup)
+import { Icon } from 'astro-icon/components';
+import SectionHeading from '../SectionHeading.astro';
+import { SITE } from '../../lib/site';
+
+const steps = [
+  { number: '1', title: 'Gabung ke Grup Telegram', desc: 'Masuk ke grup resmi dan hubungi admin.' },
+  { number: '2', title: 'Konfirmasi & Onboarding', desc: 'Admin akan memandu langkah selanjutnya.' },
+  { number: '3', title: 'Mulai Edukasi + Praktik', desc: 'Ikuti materi dan dukungan akun praktik.' },
+  { number: '4', title: 'Trading Mandiri', desc: 'Bangun kebiasaan trading yang disiplin.' },
+];
+---
+
+<section class="section-pad bg-bg">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Cara Daftar"
+      title="Cara daftar VIP Education"
+      align="center"
+    />
+
+    <div class="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+      {
+        steps.map((step) => (
+          <div class="card flex items-start gap-4 p-5">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] bg-primary-light text-[15px] font-bold text-primary">
+              {step.number}
+            </span>
+            <div>
+              <p class="text-[15px] font-semibold text-ink">{step.title}</p>
+              <p class="body-secondary mt-1">{step.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 text-center">
+      <a
+        href={SITE.telegram}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-gold px-10 py-4 text-base"
+      >
+        <Icon name="lucide:send" class="h-5 w-5" />
+        Daftar VIP Insider
+      </a>
+      <p class="caption mt-3">Daftar langsung di grup Telegram Richirad.</p>
+    </div>
+  </div>
+</section>

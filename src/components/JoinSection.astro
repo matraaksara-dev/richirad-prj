@@ -1,0 +1,193 @@
+---
+// Richirad. — Cara Bergabung (PRD 3.10 + Amendment v2.1)
+// Telegram-first: CTA utama → Grup Telegram, form sebagai opsi sekunder
+import { Icon } from 'astro-icon/components';
+import SectionHeading from './SectionHeading.astro';
+import { SITE } from '../lib/site';
+
+const steps = [
+  { number: '1', icon: 'lucide:edit-3', title: 'Isi Data Singkat', desc: 'Lengkapi minat dan level pengalaman kamu.' },
+  { number: '2', icon: 'lucide:send', title: 'Gabung ke Grup Telegram', desc: 'Kamu akan diarahkan ke ruang komunitas resmi.' },
+  { number: '3', icon: 'lucide:book-open', title: 'Mulai Belajar', desc: 'Ikuti materi, diskusi, dan meetup sesuai level.' },
+  { number: '4', icon: 'lucide:trending-up', title: 'Tumbuh Bersama', desc: 'Bangun kebiasaan trading yang lebih disiplin dan aman.' },
+];
+---
+
+<section id="gabung" class="section-pad scroll-mt-24 bg-bg">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Gabung"
+      title="Cara bergabung sangat sederhana."
+      align="center"
+    />
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-5">
+      <!-- Steps (3 kolom) + CTA Telegram -->
+      <div class="lg:col-span-3">
+        <div class="grid gap-6 sm:grid-cols-2">
+          {
+            steps.map((step) => (
+              <div class="card flex items-start gap-4 p-5">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] bg-primary-light text-[15px] font-bold text-primary">
+                  {step.number}
+                </span>
+                <div>
+                  <p class="text-[15px] font-semibold text-ink">{step.title}</p>
+                  <p class="body-secondary mt-1">{step.desc}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <a
+          href={SITE.telegram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary mt-6 w-full py-4 text-base"
+        >
+          <Icon name="lucide:send" class="h-5 w-5" />
+          {SITE.telegramLabel}
+        </a>
+        <p class="caption mt-2 text-center">Diskusi &amp; update komunitas</p>
+      </div>
+
+      <!-- Form (2 kolom) — opsi sekunder -->
+      <div class="card p-6 sm:p-8 lg:col-span-2">
+        <h3 class="text-lg font-semibold text-ink">Atau, isi formulir</h3>
+        <p class="body-secondary mt-1">Kami akan menghubungi kamu melalui WhatsApp atau email.</p>
+
+        <form id="join-form" class="mt-6 space-y-5" novalidate>
+          <!-- Nama -->
+          <div>
+            <label for="nama" class="block text-sm font-medium text-ink-soft">Nama Lengkap</label>
+            <input
+              id="nama"
+              name="nama"
+              type="text"
+              required
+              class="mt-1.5 block w-full rounded-[6px] border border-border bg-card px-3.5 py-2.5 text-[15px] text-ink placeholder:text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              placeholder="Nama kamu"
+            />
+            <p class="mt-1 hidden text-[13px] text-red-500" data-error="nama">Nama harus diisi.</p>
+          </div>
+
+          <!-- Domisili -->
+          <div>
+            <label for="domisili" class="block text-sm font-medium text-ink-soft">Domisili</label>
+            <select
+              id="domisili"
+              name="domisili"
+              required
+              class="mt-1.5 block w-full rounded-[6px] border border-border bg-card px-3.5 py-2.5 text-[15px] text-ink focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            >
+              <option value="">Pilih domisili</option>
+              <option value="Malang">Malang</option>
+              <option value="Luar Malang">Luar Malang</option>
+            </select>
+            <p class="mt-1 hidden text-[13px] text-red-500" data-error="domisili">Pilih domisili.</p>
+          </div>
+
+          <!-- Level Pengalaman -->
+          <div>
+            <label for="level" class="block text-sm font-medium text-ink-soft">Level Pengalaman</label>
+            <select
+              id="level"
+              name="level"
+              required
+              class="mt-1.5 block w-full rounded-[6px] border border-border bg-card px-3.5 py-2.5 text-[15px] text-ink focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            >
+              <option value="">Pilih level</option>
+              <option value="Pemula">Pemula</option>
+              <option value="Intermediate">Intermediate</option>
+            </select>
+            <p class="mt-1 hidden text-[13px] text-red-500" data-error="level">Pilih level pengalaman.</p>
+          </div>
+
+          <!-- WhatsApp / Email -->
+          <div>
+            <label for="kontak" class="block text-sm font-medium text-ink-soft">Nomor WhatsApp atau Email</label>
+            <input
+              id="kontak"
+              name="kontak"
+              type="text"
+              required
+              class="mt-1.5 block w-full rounded-[6px] border border-border bg-card px-3.5 py-2.5 text-[15px] text-ink placeholder:text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              placeholder="0812-xxxx-xxxx atau email@example.com"
+            />
+            <p class="mt-1 hidden text-[13px] text-red-500" data-error="kontak">Masukkan nomor WA atau email.</p>
+          </div>
+
+          <!-- Checkbox disclaimer -->
+          <div class="flex items-start gap-3">
+            <input
+              id="disclaimer"
+              name="disclaimer"
+              type="checkbox"
+              required
+              class="mt-1 h-4 w-4 shrink-0 rounded-[4px] border-border text-primary focus:ring-primary"
+            />
+            <label for="disclaimer" class="text-[13px] leading-[1.5] text-muted">
+              Saya memahami bahwa Richirad. adalah komunitas edukasi dan tidak memberikan
+              signal atau rekomendasi aset.
+            </label>
+          </div>
+          <p class="hidden text-[13px] text-red-500" data-error="disclaimer">Kamu harus menyetujui pernyataan ini.</p>
+
+          <!-- Submit -->
+          <button type="submit" class="btn-primary w-full">
+            Kirim Pendaftaran
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          </button>
+        </form>
+
+        <!-- Success state -->
+        <div id="form-success" class="mt-6 hidden rounded-[8px] border border-primary/30 bg-primary-light p-6 text-center">
+          <Icon name="lucide:check-circle-2" class="mx-auto h-10 w-10 text-primary" />
+          <p class="mt-3 text-[15px] font-semibold text-ink">Pendaftaran terkirim!</p>
+          <p class="caption mt-1">
+            Kami akan menghubungi kamu melalui WhatsApp atau email yang didaftarkan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('join-form') as HTMLFormElement;
+  const success = document.getElementById('form-success') as HTMLElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    // Validasi setiap field
+    const fields = ['nama', 'domisili', 'level', 'kontak', 'disclaimer'];
+    fields.forEach((id) => {
+      const input = form.elements[id as keyof HTMLFormControlsCollection] as HTMLInputElement | HTMLSelectElement;
+      const error = form.querySelector(`[data-error="${id}"]`) as HTMLElement;
+      const isCheckbox = input.type === 'checkbox';
+
+      if (isCheckbox ? !input.checked : !input.value.trim()) {
+        input.classList.add('border-red-400');
+        error?.classList.remove('hidden');
+        valid = false;
+      } else {
+        input.classList.remove('border-red-400');
+        error?.classList.add('hidden');
+      }
+    });
+
+    if (!valid) return;
+
+    // Placeholder: submit sukses
+    // TODO: Ganti dengan Formspree / API endpoint
+    // form.action = "https://formspree.io/f/xxxxx";
+    // form.method = "POST";
+    // form.submit();
+
+    form.classList.add('hidden');
+    success.classList.remove('hidden');
+  });
+</script>

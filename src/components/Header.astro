@@ -1,0 +1,176 @@
+---
+// Richirad. — Header / Navigation (PRD 3.1 + Amendment v2.1)
+// Sticky, white bg, border-bottom subtle, CTA → Telegram (registrasi)
+import { Icon } from 'astro-icon/components';
+import { SITE } from '../lib/site';
+
+const nav = [
+  { label: 'Beranda', href: '#beranda' },
+  { label: 'Tentang', href: '#tentang' },
+  { label: 'Program', href: '#program' },
+  { label: 'Komunitas', href: '#komunitas' },
+  { label: 'VIP', href: '/vip' },
+  { label: 'FAQ', href: '#faq' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
+  <div class="container-page flex h-16 items-center justify-between gap-6 md:h-[72px]">
+    <!-- Logo text -->
+    <a
+      href="#beranda"
+      class="text-[22px] font-extrabold tracking-tight text-ink"
+      aria-label="Richirad. — kembali ke beranda"
+    >
+      Richirad<span class="text-primary">.</span>
+    </a>
+
+    <!-- Menu desktop -->
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Navigasi utama">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class={
+              item.label === 'VIP'
+                ? 'text-[15px] font-semibold text-gold transition-colors'
+                : 'text-[15px] font-medium text-ink-soft transition-colors hover:text-primary'
+            }
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <!-- Toggle tema -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-[6px] text-ink transition-colors hover:bg-surface"
+        aria-label="Aktifkan tema terang"
+        aria-pressed="false"
+      >
+        <Icon name="lucide:moon" id="icon-moon" class="h-5 w-5 dark:hidden" />
+        <Icon name="lucide:sun" id="icon-sun" class="hidden h-5 w-5 dark:block" />
+      </button>
+
+      <!-- CTA desktop → Telegram -->
+      <a
+        href={SITE.telegram}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary hidden md:inline-flex"
+      >
+        <Icon name="lucide:send" class="h-4 w-4" />
+        Gabung Grup
+      </a>
+
+      <!-- Tombol hamburger mobile -->
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-[6px] text-ink transition-colors hover:bg-surface md:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Buka menu"
+      >
+        <Icon name="lucide:menu" id="icon-open" class="h-6 w-6" />
+        <Icon name="lucide:x" id="icon-close" class="hidden h-6 w-6" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <nav
+    id="mobile-menu"
+    class="hidden border-t border-border bg-card px-5 pb-6 pt-3 md:hidden"
+    aria-label="Navigasi mobile"
+  >
+    <ul class="flex flex-col gap-1">
+      {
+        nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={
+                item.label === 'VIP'
+                  ? 'block rounded-[6px] px-3 py-2.5 text-[15px] font-semibold text-gold transition-colors'
+                  : 'block rounded-[6px] px-3 py-2.5 text-[15px] font-medium text-ink-soft transition-colors hover:bg-surface hover:text-primary'
+              }
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <a
+      href={SITE.telegram}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-primary mt-4 w-full"
+    >
+      <Icon name="lucide:send" class="h-4 w-4" />
+      Gabung Grup
+    </a>
+  </nav>
+</header>
+
+<script>
+  // ── Theme toggle (dark = default) ──
+  // Visibilitas ikon sun/moon ditangani CSS (dark: variant)
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle') as HTMLButtonElement;
+
+  function applyTheme(light: boolean) {
+    root.classList.toggle('light', light);
+    root.classList.toggle('dark', !light);
+    root.setAttribute('data-theme', light ? 'light' : 'dark');
+    try {
+      localStorage.setItem('richirad-theme', light ? 'light' : 'dark');
+    } catch (e) {
+      /* ignore */
+    }
+    themeToggle.setAttribute('aria-pressed', String(!light));
+    themeToggle.setAttribute(
+      'aria-label',
+      light ? 'Aktifkan tema gelap' : 'Aktifkan tema terang',
+    );
+  }
+
+  themeToggle.addEventListener('click', () => {
+    applyTheme(root.classList.contains('dark'));
+  });
+
+  // Sinkronkan label tombol dengan tema aktual saat halaman dimuat
+  // (setelah reload, atribut statis HTML belum merefleksikan tema tersimpan)
+  applyTheme(root.classList.contains('light'));
+
+  // ── Mobile menu ──
+  const menuToggle = document.getElementById('menu-toggle') as HTMLButtonElement;
+  const menu = document.getElementById('mobile-menu') as HTMLElement;
+  const iconOpen = document.getElementById('icon-open') as HTMLElement;
+  const iconClose = document.getElementById('icon-close') as HTMLElement;
+
+  function setMenu(open: boolean) {
+    menu.classList.toggle('hidden', !open);
+    iconOpen.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+  }
+
+  menuToggle.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+
+  // Tutup menu saat salah satu link diklik
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenu(false));
+  });
+
+  // Tutup menu dengan tombol Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.classList.contains('hidden')) setMenu(false);
+  });
+</script>

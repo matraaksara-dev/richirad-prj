@@ -1,0 +1,72 @@
+---
+// Richirad. — Filosofi & Nilai Inti (PRD 3.5)
+// Background #E8F4FC, kutipan besar + 5 nilai
+import { Icon } from 'astro-icon/components';
+import SectionHeading from './SectionHeading.astro';
+
+const values = [
+  {
+    icon: 'lucide:users',
+    title: 'Kebersamaan',
+    desc: 'Kami tumbuh lebih baik ketika saling mendukung.',
+  },
+  {
+    icon: 'lucide:book-open',
+    title: 'Edukasi',
+    desc: 'Ilmu dulu, eksekusi kemudian. Tidak ada jalan pintas.',
+  },
+  {
+    icon: 'lucide:target',
+    title: 'Profesionalisme',
+    desc: 'Proses yang jelas, terukur, dan bertanggung jawab.',
+  },
+  {
+    icon: 'lucide:shield-check',
+    title: 'Keamanan',
+    desc: 'Manajemen risiko adalah fondasi, bukan tambahan.',
+  },
+  {
+    icon: 'lucide:trending-up',
+    title: 'Kesejahteraan Bersama',
+    desc: 'Sukses individu memperkuat komunitas.',
+  },
+];
+---
+
+<section class="section-pad bg-primary-light">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Filosofi"
+      title="Filosofi kami sederhana."
+      align="center"
+    />
+
+    <blockquote class="mx-auto mt-8 max-w-3xl text-center">
+      <p class="text-2xl font-semibold leading-[1.4] text-ink sm:text-3xl">
+        “Trading butuh teman.
+        <br />
+        Kebersamaan membuat perjalanan lebih disiplin, lebih aman, dan lebih berarti.”
+      </p>
+    </blockquote>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        values.map((value) => (
+          <article class="card p-6 transition-shadow hover:shadow-[var(--shadow-card-hover)]">
+            <span class="flex h-11 w-11 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+              <Icon name={value.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="h3 mt-4">{value.title}</h3>
+            <p class="body-secondary mt-2">{value.desc}</p>
+          </article>
+        ))
+      }
+
+      <!-- Penutup grid 5 kartu → 3 + 2, kartu terakhir berisi CTA mini -->
+      <article class="flex flex-col justify-center rounded-[8px] border border-primary/30 bg-card/60 p-6">
+        <p class="text-[15px] font-semibold text-ink">Satu nilai yang memandu semuanya:</p>
+        <p class="mt-1 text-[15px] font-medium text-primary">ilmu, disiplin, dan kebersamaan.</p>
+      </article>
+    </div>
+  </div>
+</section>

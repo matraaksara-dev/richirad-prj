@@ -1,0 +1,54 @@
+---
+// Richirad. — Testimoni / Member Stories (PRD 3.9)
+// Background #E8F4FC — placeholder, fokus proses & disiplin, bukan profit
+import { Icon } from 'astro-icon/components';
+import SectionHeading from './SectionHeading.astro';
+
+const testimonials = [
+  {
+    quote:
+      'Akhirnya punya tempat belajar yang tidak ribut soal signal. Fokusnya jelas: ilmu dan disiplin.',
+    author: 'Member Richirad.',
+    role: 'Malang',
+  },
+  {
+    quote: 'Meetup-nya bikin semangat. Ketemu orang yang sama-sama serius belajar.',
+    author: 'Member Richirad.',
+    role: 'Malang',
+  },
+  {
+    quote:
+      'Belajar risk management di sini mengubah cara saya melihat trading — dari ngejar profit jadi ngejar proses.',
+    author: 'Member Richirad.',
+    role: 'Malang',
+  },
+];
+---
+
+<section class="section-pad bg-primary-light">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Testimoni"
+      title="Cerita dari perjalanan bersama."
+      sub="Fokus kami pada proses, disiplin, dan kebersamaan — bukan klaim profit."
+      align="center"
+    />
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {
+        testimonials.map((item) => (
+          <figure class="card flex flex-col p-7">
+            <Icon name="lucide:quote" class="h-6 w-6 text-primary" aria-hidden="true" />
+            <blockquote class="mt-4 flex-1 text-[15px] leading-[1.6] text-ink-soft">
+              “{item.quote}”
+            </blockquote>
+            <figcaption class="mt-6 border-t border-border pt-4">
+              <p class="text-sm font-semibold text-ink">{item.author}</p>
+              <p class="caption">{item.role}</p>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+// Richirad. — Problem → Solution (PRD 3.4)
+import { Icon } from 'astro-icon/components';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="tentang" class="section-pad scroll-mt-24 bg-bg">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Masalah & Solusi"
+      title="Trading sendirian itu berat."
+      sub="Richirad. hadir untuk mengubah cara kamu belajar trading — dari sendirian menjadi bersama."
+    />
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-2">
+      <!-- Problem -->
+      <article class="card p-7 sm:p-8">
+        <span class="flex h-11 w-11 items-center justify-center rounded-[8px] bg-surface text-muted">
+          <Icon name="lucide:user-x" class="h-6 w-6" />
+        </span>
+        <h3 class="h3 mt-5">Belajar sendirian</h3>
+        <p class="body-secondary mt-3">
+          Banyak trader pemula dan intermediate belajar dari konten acak, grup signal, atau
+          forum yang ramai noise. Hasilnya? Keputusan emosional, kurang disiplin, dan
+          perjalanan yang terasa sepi.
+        </p>
+      </article>
+
+      <!-- Solution -->
+      <article class="card border-primary/30 p-7 sm:p-8">
+        <span class="flex h-11 w-11 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+          <Icon name="lucide:users-round" class="h-6 w-6" />
+        </span>
+        <h3 class="h3 mt-5">Bersama Richirad.</h3>
+        <p class="body-secondary mt-3">
+          Richirad. hadir sebagai ruang belajar yang terstruktur, profesional, dan penuh
+          kebersamaan. Kami percaya trading yang sehat dibangun bersama — dengan ilmu,
+          disiplin, dan teman seperjuangan.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>

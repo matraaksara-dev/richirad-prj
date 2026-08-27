@@ -1,0 +1,57 @@
+---
+// Richirad. — VIP: Yang Kamu Dapatkan (PRD Amendment v2.1, Bagian 4.4 Section 5)
+import { Icon } from 'astro-icon/components';
+import SectionHeading from '../SectionHeading.astro';
+
+const benefits = [
+  {
+    icon: 'lucide:book-open',
+    title: 'Materi Edukasi VIP',
+    desc: 'Akses materi futures & spot tingkat lanjut, dari dasar hingga penerapan.',
+  },
+  {
+    icon: 'lucide:wallet',
+    title: 'Dukungan Akun Praktik',
+    desc: 'Akun praktik sesuai skema program untuk menerapkan ilmu secara nyata.',
+  },
+  {
+    icon: 'lucide:message-circle',
+    title: 'Mentoring & Review',
+    desc: 'Review trade dan diskusi bersama komunitas secara berkala.',
+  },
+  {
+    icon: 'lucide:trending-up',
+    title: 'Menuju Trading Mandiri',
+    desc: 'Fokus membangun kemampuan trading mandiri dalam 3 bulan.',
+  },
+  {
+    icon: 'lucide:calendar',
+    title: 'Meetup & Diskusi Prioritas',
+    desc: 'Akses meetup dan diskusi prioritas (jika berlaku).',
+  },
+];
+---
+
+<section class="section-pad bg-surface">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Manfaat"
+      title="Yang kamu dapatkan"
+      align="center"
+    />
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        benefits.map((item) => (
+          <article class="card p-6">
+            <span class="flex h-11 w-11 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+              <Icon name={item.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="h3 mt-4">{item.title}</h3>
+            <p class="body-secondary mt-2">{item.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

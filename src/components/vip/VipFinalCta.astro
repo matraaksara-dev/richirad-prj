@@ -1,0 +1,28 @@
+---
+// Richirad. — VIP: Final CTA (PRD Amendment v2.1, Bagian 4.4 Section 9)
+// Background dark, CTA → Telegram
+import { Icon } from 'astro-icon/components';
+import { SITE } from '../../lib/site';
+---
+
+<section class="bg-night">
+  <div class="container-page py-16 text-center md:py-24">
+    <h2 class="mx-auto max-w-3xl text-3xl font-bold leading-[1.25] text-white sm:text-4xl lg:text-5xl">
+      Siap naik level dengan VIP Education?
+    </h2>
+
+    <a
+      href={SITE.telegram}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-gold mt-8 px-10 py-4 text-base"
+    >
+      <Icon name="lucide:send" class="h-5 w-5" />
+      Daftar VIP Insider
+    </a>
+
+    <p class="caption mt-6 text-white/50">
+      Nikmati banyak keuntungan • Edukasi • Praktik • Komunitas
+    </p>
+  </div>
+</section>

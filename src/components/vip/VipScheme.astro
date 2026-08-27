@@ -1,0 +1,85 @@
+---
+// Richirad. — VIP: Skema Program (PRD Amendment v2.1, Bagian 4.4 Section 3 + 4)
+// "Apa itu" + tabel skema transparan + catatan penting disclaimer
+import { Icon } from 'astro-icon/components';
+import SectionHeading from '../SectionHeading.astro';
+import { VIP_DISCLAIMER } from '../../lib/site';
+---
+
+<section id="skema" class="section-pad scroll-mt-24 bg-bg">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Tentang Program"
+      title="Bukan sekadar kelas. Ini jalur belajar + praktik."
+      sub="VIP Education adalah program edukasi intensif Richirad. yang menggabungkan materi terstruktur, dukungan akun praktik, dan ruang komunitas selama 3 bulan. Fokus utama tetap pada ilmu, disiplin, dan kemampuan trading mandiri."
+    />
+
+    <div class="mt-12 mx-auto max-w-3xl">
+      <h3 class="h3 text-center">Bagaimana skemanya bekerja</h3>
+
+      <div class="mt-6 overflow-x-auto rounded-[8px] border border-border">
+        <table class="w-full text-left text-[15px]">
+          <thead>
+            <tr class="bg-surface text-ink-soft">
+              <th class="px-5 py-3.5 font-semibold sm:px-6">Item</th>
+              <th class="px-5 py-3.5 font-semibold sm:px-6">Keterangan</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-5 py-3.5 font-medium text-ink sm:px-6">Kontribusi member</td>
+              <td class="px-5 py-3.5 text-ink-soft sm:px-6">USD 100</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3.5 font-medium text-ink sm:px-6">Akun</td>
+              <td class="px-5 py-3.5 text-ink-soft sm:px-6">
+                1 sub akun trading privat per member — member dapat trading langsung di akun
+                tersebut.
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3.5 font-medium text-ink sm:px-6">Alokasi</td>
+              <td class="px-5 py-3.5 text-ink-soft sm:px-6">
+                1 USD ke akun cent atas nama member VIP
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3.5 font-medium text-ink sm:px-6">Dukungan harian</td>
+              <td class="px-5 py-3.5 text-ink-soft sm:px-6">
+                USD 3 per hari selama 20 hari kerja (1 bulan)
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3.5 font-medium text-ink sm:px-6">Periode edukasi &amp; praktik</td>
+              <td class="px-5 py-3.5 text-ink-soft sm:px-6">
+                Hingga 3 bulan menuju trading mandiri
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Catatan penting ─ compliance disclaimer -->
+      <div class="mt-6 rounded-[8px] border border-primary/30 bg-surface p-5 sm:p-6">
+        <div class="flex items-start gap-3">
+          <Icon name="lucide:shield-check" class="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+          <div>
+            <p class="text-sm font-semibold text-ink">Catatan penting</p>
+            <p class="caption mt-2 leading-[1.6]">
+              Angka di atas adalah bagian dari struktur program edukasi. Bukan jaminan hasil
+              atau imbal hasil tetap. Trading selalu mengandung risiko. Keputusan dan tanggung
+              jawab sepenuhnya ada pada member.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full disclaimer VIP -->
+      <div class="mt-4 rounded-[8px] border border-border p-5 sm:p-6">
+        <p class="caption leading-[1.6]">
+          <strong class="font-semibold text-ink-soft">Disclaimer:</strong> {VIP_DISCLAIMER}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

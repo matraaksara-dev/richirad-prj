@@ -1,0 +1,86 @@
+---
+// Richirad. — Program Edukasi / Learning Path (PRD 3.7)
+// Background #F3F4F6, 3 level
+import { Icon } from 'astro-icon/components';
+import SectionHeading from './SectionHeading.astro';
+
+const levels = [
+  {
+    number: '01',
+    name: 'Level 1 — Fondasi',
+    icon: 'lucide:book-open',
+    points: [
+      'Pengenalan futures & spot',
+      'Dasar chart & order',
+      'Manajemen risiko & position sizing',
+      'Psychology dasar',
+    ],
+  },
+  {
+    number: '02',
+    name: 'Level 2 — Pengembangan',
+    icon: 'lucide:trending-up',
+    points: [
+      'Price action & struktur market',
+      'Risk management lanjutan',
+      'Journaling & review trade',
+      'Emotional control',
+    ],
+  },
+  {
+    number: '03',
+    name: 'Level 3 — Penerapan',
+    icon: 'lucide:target',
+    points: [
+      'Setup futures & spot secara disiplin',
+      'Trade plan pribadi',
+      'Review bersama komunitas',
+      'Membangun konsistensi jangka panjang',
+    ],
+  },
+];
+---
+
+<section class="section-pad bg-surface">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Program"
+      title="Jalur belajar yang jelas."
+      sub="Kami menyusun perjalanan belajar secara bertahap agar setiap member paham fondasi sebelum masuk ke strategi."
+    />
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-3">
+      {
+        levels.map((level) => (
+          <article class="card relative flex flex-col p-7">
+            <div class="flex items-center justify-between">
+              <span class="text-4xl font-extrabold leading-none text-primary/20">
+                {level.number}
+              </span>
+              <span class="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+                <Icon name={level.icon} class="h-5 w-5" />
+              </span>
+            </div>
+
+            <h3 class="h3 mt-4">{level.name}</h3>
+
+            <ul class="mt-4 space-y-2.5">
+              {
+                level.points.map((point) => (
+                  <li class="flex items-start gap-2.5">
+                    <Icon name="lucide:check-circle-2" class="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span class="body-secondary">{point}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="caption mt-8 text-center">
+      Materi bersifat edukasi. Keputusan trading sepenuhnya tanggung jawab masing-masing member.
+    </p>
+  </div>
+</section>

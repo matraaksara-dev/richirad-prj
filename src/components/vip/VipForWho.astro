@@ -1,0 +1,59 @@
+---
+// Richirad. — VIP: Untuk Siapa (PRD Amendment v2.1, Bagian 4.4 Section 2)
+import { Icon } from 'astro-icon/components';
+import SectionHeading from '../SectionHeading.astro';
+
+const segments = [
+  {
+    icon: 'lucide:graduation-cap',
+    title: 'Mahasiswa',
+    desc: 'Ingin belajar trading sambil kuliah, tanpa mengorbankan waktu belajar.',
+  },
+  {
+    icon: 'lucide:briefcase',
+    title: 'Karyawan',
+    desc: 'Mencari keterampilan sampingan yang terstruktur di luar jam kerja.',
+  },
+  {
+    icon: 'lucide:laptop',
+    title: 'Freelancer',
+    desc: 'Ingin mengelola risiko keuangan dengan lebih baik dan terukur.',
+  },
+  {
+    icon: 'lucide:trending-up',
+    title: 'Profesional Muda',
+    desc: 'Menghargai proses, disiplin, dan pendekatan berbasis data.',
+  },
+  {
+    icon: 'lucide:users',
+    title: 'Trader Pemula–Intermediate',
+    desc: 'Butuh jalur yang jelas dan dukungan komunitas yang serius.',
+  },
+];
+---
+
+<section class="section-pad bg-surface">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Target"
+      title="Dirancang untuk kamu yang…"
+      align="center"
+    />
+
+    <div class="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+      {
+        segments.map((item) => (
+          <div class="card flex items-start gap-4 p-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+              <Icon name={item.icon} class="h-5 w-5" />
+            </span>
+            <div>
+              <p class="text-[15px] font-semibold text-ink">{item.title}</p>
+              <p class="body-secondary mt-1">{item.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

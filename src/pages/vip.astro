@@ -1,0 +1,25 @@
+---
+// Richirad. — Halaman VIP Education (PRD Amendment v2.1)
+// SEO: title + description khusus; layout & tema sama dengan halaman utama
+import BaseLayout from '../layouts/BaseLayout.astro';
+import VipHero from '../components/vip/VipHero.astro';
+import VipForWho from '../components/vip/VipForWho.astro';
+import VipScheme from '../components/vip/VipScheme.astro';
+import VipBenefits from '../components/vip/VipBenefits.astro';
+import VipHowTo from '../components/vip/VipHowTo.astro';
+import VipFaq from '../components/vip/VipFaq.astro';
+import VipFinalCta from '../components/vip/VipFinalCta.astro';
+---
+
+<BaseLayout
+  title="VIP Education — Richirad. | Program Edukasi Trading Intensif"
+  description="Program edukasi trading intensif untuk mahasiswa, pekerja, dan freelancer. Fokus edukasi dan praktik dengan manajemen risiko. Trading berisiko — bukan investasi berimbal hasil tetap."
+>
+  <VipHero />
+  <VipForWho />
+  <VipScheme />
+  <VipBenefits />
+  <VipHowTo />
+  <VipFaq />
+  <VipFinalCta />
+</BaseLayout>

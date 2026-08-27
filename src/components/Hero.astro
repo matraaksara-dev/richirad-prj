@@ -1,0 +1,129 @@
+---
+// Richirad. — Hero Section (PRD 3.2 + Amendment v2.1)
+// Background putih, 2 kolom: teks kiri + visual kanan
+// CTA utama → Telegram (registrasi via grup)
+import { Icon } from 'astro-icon/components';
+import { SITE } from '../lib/site';
+
+const trustItems = ['Edukasi murni', 'Tanpa signal', 'Berbasis Malang'];
+---
+
+<section id="beranda" class="section-pad overflow-hidden">
+  <div class="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <!-- Kolom teks -->
+    <div>
+      <p class="eyebrow">
+        <Icon name="lucide:map-pin" class="h-4 w-4 text-primary" />
+        Komunitas Edukasi Trading • Malang
+      </p>
+
+      <h1 class="h1 mt-5">
+        Trading butuh teman.<br />
+        <span class="text-primary">Belajar futures &amp; spot</span> dengan cara yang
+        profesional dan aman.
+      </h1>
+
+      <p class="lead mt-6 max-w-xl text-muted">
+        Richirad. adalah ruang edukasi dan kebersamaan bagi trader di Kota Malang. Fokus
+        kami: disiplin, manajemen risiko, dan pertumbuhan bersama — bukan signal.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href={SITE.telegram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          <Icon name="lucide:send" class="h-4 w-4" />
+          {SITE.telegramLabel}
+        </a>
+        <a
+          href="#tentang"
+          class="btn-secondary"
+        >
+          Pelajari lebih lanjut
+          <Icon name="lucide:arrow-down" class="h-4 w-4" />
+        </a>
+      </div>
+
+      <!-- Trust micro-copy -->
+      <ul class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
+        {
+          trustItems.map((item, i) => (
+            <>
+              {i > 0 && <li class="hidden h-4 w-px bg-border sm:block" aria-hidden="true" />}
+              <li class="flex items-center gap-2 text-sm font-medium text-muted">
+                <Icon name="lucide:check-circle-2" class="h-4 w-4 text-primary" />
+                {item}
+              </li>
+            </>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Kolom visual -->
+    <div class="relative mx-auto w-full max-w-[520px]" aria-hidden="true">
+      <!-- Latar lembut -->
+      <div
+        class="absolute inset-0 -z-10 rounded-[24px] bg-gradient-to-br from-primary-light to-surface"
+      ></div>
+
+      <!-- Card utama: Perjalanan belajar -->
+      <div class="card p-6 sm:p-8">
+        <div class="flex items-center gap-3">
+          <span class="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+            <Icon name="lucide:graduation-cap" class="h-5 w-5" />
+          </span>
+          <div>
+            <p class="text-[15px] font-semibold text-ink">Jalur Belajar Terstruktur</p>
+            <p class="caption">Fondasi → Pengembangan → Penerapan</p>
+          </div>
+        </div>
+
+        <ul class="mt-6 space-y-4">
+          {
+            [
+              { label: 'Level 1 — Fondasi', progress: '100%' },
+              { label: 'Level 2 — Pengembangan', progress: '70%' },
+              { label: 'Level 3 — Penerapan', progress: '40%' },
+            ].map((level) => (
+              <li>
+                <div class="flex items-center justify-between text-[13px] font-medium text-ink-soft">
+                  <span>{level.label}</span>
+                  <span class="text-muted">{level.progress}</span>
+                </div>
+                <div class="mt-1.5 h-1.5 overflow-hidden rounded-full bg-surface">
+                  <div class="h-full rounded-full bg-primary" style={`width: ${level.progress}`}></div>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Badge melayang: Meetup -->
+      <div class="card absolute -top-5 right-2 flex items-center gap-3 p-3.5 sm:right-0">
+        <span class="flex h-9 w-9 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+          <Icon name="lucide:calendar" class="h-5 w-5" />
+        </span>
+        <div>
+          <p class="text-sm font-semibold text-ink">Meetup Offline</p>
+          <p class="caption">Kota Malang</p>
+        </div>
+      </div>
+
+      <!-- Badge melayang: Risiko -->
+      <div class="card absolute -bottom-5 left-2 flex items-center gap-3 p-3.5 sm:left-0">
+        <span class="flex h-9 w-9 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+          <Icon name="lucide:shield-check" class="h-5 w-5" />
+        </span>
+        <div>
+          <p class="text-sm font-semibold text-ink">Manajemen Risiko</p>
+          <p class="caption">Prioritas utama</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
