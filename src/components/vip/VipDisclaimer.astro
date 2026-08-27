@@ -1,0 +1,35 @@
+---
+// Richirad. — VIP: Disclaimer Legal (PRD Amendment v2.1, Bagian 8)
+// Penempatan ke-4: area akhir halaman VIP, sebelum Final CTA / footer
+import { Icon } from 'astro-icon/components';
+import SectionHeading from '../SectionHeading.astro';
+import { VIP_DISCLAIMER } from '../../lib/site';
+---
+
+<section class="section-pad bg-bg">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="Disclaimer"
+      title="Transparansi & tanggung jawab"
+      align="center"
+    />
+
+    <div class="mx-auto mt-10 max-w-3xl">
+      <div class="rounded-[8px] border border-primary/30 bg-surface p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-[8px] bg-primary-light text-primary">
+            <Icon name="lucide:shield-check" class="h-6 w-6" />
+          </span>
+          <p class="body-secondary leading-[1.7]">
+            <strong class="font-semibold text-ink">Disclaimer:</strong> {VIP_DISCLAIMER}
+          </p>
+        </div>
+      </div>
+
+      <p class="caption mx-auto mt-6 max-w-2xl text-center">
+        Richirad. menganjurkan setiap member untuk memahami risiko sebelum bergabung dan
+        hanya menggunakan dana yang siap untuk dihadapi risikonya.
+      </p>
+    </div>
+  </div>
+</section>
