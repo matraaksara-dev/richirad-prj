@@ -27,6 +27,7 @@ const {
     <!-- Anti-flash: terapkan tema sebelum halaman dirender (default: gelap) -->
     <script is:inline>
       (function () {
+        document.documentElement.classList.add('js');
         var stored = null;
         try {
           stored = localStorage.getItem('richirad-theme');
@@ -72,5 +73,23 @@ const {
       <slot />
     </main>
     <Footer />
+    <script>
+      // Scroll reveal — pasang [data-animate] otomatis pada anak langsung tiap section
+      const els = document.querySelectorAll('main section .container-page > *');
+      els.forEach((el) => el.setAttribute('data-animate', ''));
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('[data-animate]').forEach((el) => io.observe(el));
+    </script>
   </body>
 </html>

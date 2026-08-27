@@ -155,3 +155,81 @@ details[open] .faq-icon-plus {
 details:not([open]) .faq-icon-minus {
   display: none;
 }
+
+/* ── TASK 3: Scroll reveal (konten tetap terlihat tanpa JS) ── */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-animate] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+  html.js [data-animate].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── TASK 4: FAQ accordion — transisi buka halus ── */
+@media (prefers-reduced-motion: no-preference) {
+  details[open] > summary + * {
+    animation: faq-in 0.25s ease-out both;
+  }
+}
+@keyframes faq-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── TASK 6: Float animation badge hero ── */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-float {
+    animation: floaty 6s ease-in-out infinite;
+  }
+  .animate-float-delay {
+    animation: floaty 7s ease-in-out infinite;
+    animation-delay: 1.2s;
+  }
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ── TASK 7: Micro-interaction tombol ── */
+@media (prefers-reduced-motion: no-preference) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-gold {
+    transition-property:
+      color,
+      background-color,
+      border-color,
+      transform,
+      box-shadow;
+  }
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-gold:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgb(0 0 0 / 0.18);
+  }
+  .btn-primary:active,
+  .btn-secondary:active,
+  .btn-gold:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}

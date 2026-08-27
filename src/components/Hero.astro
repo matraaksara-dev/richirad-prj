@@ -8,7 +8,11 @@ import { SITE } from '../lib/site';
 const trustItems = ['Edukasi murni', 'Tanpa signal', 'Berbasis Malang'];
 ---
 
-<section id="beranda" class="section-pad overflow-hidden">
+<section id="beranda" class="section-pad relative overflow-hidden">
+  <!-- Dekorasi ambient -->
+  <div aria-hidden="true" class="pointer-events-none absolute -top-24 left-1/2 h-[360px] w-[360px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -left-24 top-40 hidden h-[280px] w-[280px] rounded-full bg-gold/10 blur-3xl lg:block"></div>
+
   <div class="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
     <!-- Kolom teks -->
     <div>
@@ -104,7 +108,7 @@ const trustItems = ['Edukasi murni', 'Tanpa signal', 'Berbasis Malang'];
       </div>
 
       <!-- Badge melayang: Meetup -->
-      <div class="card absolute -top-5 right-2 flex items-center gap-3 p-3.5 sm:right-0">
+      <div class="card animate-float absolute -top-5 right-2 flex items-center gap-3 p-3.5 sm:right-0">
         <span class="flex h-9 w-9 items-center justify-center rounded-[8px] bg-primary-light text-primary">
           <Icon name="lucide:calendar" class="h-5 w-5" />
         </span>
@@ -115,7 +119,7 @@ const trustItems = ['Edukasi murni', 'Tanpa signal', 'Berbasis Malang'];
       </div>
 
       <!-- Badge melayang: Risiko -->
-      <div class="card absolute -bottom-5 left-2 flex items-center gap-3 p-3.5 sm:left-0">
+      <div class="card animate-float-delay absolute -bottom-5 left-2 flex items-center gap-3 p-3.5 sm:left-0">
         <span class="flex h-9 w-9 items-center justify-center rounded-[8px] bg-primary-light text-primary">
           <Icon name="lucide:shield-check" class="h-5 w-5" />
         </span>
