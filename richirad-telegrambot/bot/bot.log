@@ -1,0 +1,43 @@
+D:\1.2 MATRA-AKSARA-MANAGEMENT\RICHIRAD-TRADINGCOMM\richirad-telegrambot\bot\flow_user.py:285: PTBUserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message. Read this FAQ entry to learn more about the per_* settings: https://github.com/python-telegram-bot/python-telegram-bot/wiki/Frequently-Asked-Questions#what-do-the-per_-settings-in-conversationhandler-do.
+  return ConversationHandler(
+2026-08-27 22:01:54,236 INFO richirad-vip-bot: Bot mulai polling... (Ctrl+C untuk stop)
+2026-08-27 22:01:54,936 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getMe "HTTP/1.1 200 OK"
+2026-08-27 22:01:55,138 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-27 22:01:55,140 INFO telegram.ext.Application: Application started
+2026-08-27 22:02:05,809 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:02:16,059 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:02:26,258 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:02:36,470 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:02:46,978 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:02:57,741 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:03:07,948 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:03:18,157 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:03:28,680 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:03:38,905 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:03:49,122 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:03:59,562 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:04:10,055 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:04:10,416 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:04:20,623 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:04:25,119 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:04:37,071 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:04:51,314 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:05:01,553 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:05:11,951 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:05:22,632 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:05:31,176 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:05:36,667 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:05:39,949 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:05:50,219 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:06:00,443 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:06:10,930 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:06:21,153 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:06:31,570 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:06:41,847 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:06:52,330 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:07:18,434 ERROR richirad-vip-bot: Error pada update ?: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-27 22:07:24,485 ERROR richirad-vip-bot: Error pada update ?: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-27 22:07:25,498 ERROR richirad-vip-bot: Error pada update ?: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-27 22:07:38,125 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:07:48,422 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"
+2026-08-27 22:07:58,916 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getUpdates "HTTP/1.1 200 OK"

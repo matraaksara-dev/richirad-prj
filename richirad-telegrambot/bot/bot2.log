@@ -1,0 +1,6 @@
+D:\1.2 MATRA-AKSARA-MANAGEMENT\RICHIRAD-TRADINGCOMM\richirad-telegrambot\bot\flow_user.py:285: PTBUserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message. Read this FAQ entry to learn more about the per_* settings: https://github.com/python-telegram-bot/python-telegram-bot/wiki/Frequently-Asked-Questions#what-do-the-per_-settings-in-conversationhandler-do.
+  return ConversationHandler(
+2026-08-27 17:16:17,089 INFO richirad-vip-bot: Bot mulai polling... (Ctrl+C untuk stop)
+2026-08-27 17:16:17,846 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/getMe "HTTP/1.1 200 OK"
+2026-08-27 17:16:18,044 INFO httpx: HTTP Request: POST https://api.telegram.org/bot8848326507:AAFrBJjzXqz4rh3kfgRHadWor6KnNzjOByY/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-27 17:16:18,046 INFO telegram.ext.Application: Application started

@@ -5,6 +5,8 @@ export const SITE = {
   // Saluran resmi registrasi (Amendment v2.1): masuk grup Telegram dulu
   telegram: 'https://t.me/Taa_x_Richirad',
   telegramLabel: 'Gabung Grup Richirad',
+  // Bot VIP — daftar VIP Education langsung via bot (berbayar)
+  vipBot: 'https://t.me/richiradvip_bot',
   // Placeholder — ganti sebelum launch
   whatsapp: 'https://wa.me/6281234567890',
   instagram: 'https://instagram.com/richirad',
